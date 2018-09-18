@@ -1,0 +1,29 @@
+resource "google_compute_instance" "default" {
+  count = 3
+  name = "controller-${count.index-1}"
+  machine_type = "n1-standard-1"
+  zone = "${data.google-compute-regions.available}"
+
+  tags = ["kubernetes-the-hard-way", "controller"]
+
+  boot_disk {
+    initialize_params {
+      image {
+        family = "ubuntu-1804-lts"
+        project = "ubuntu-os-cloud"
+      }
+      size = 200
+    }
+  }
+
+  network_interface {
+    network = "${google_compute_network.kubernetes-the-hard-way.self_link}"
+    subnetwork = "${google_compute_subnetwork.kubernetes.name}"
+    address = "10.240.0.1${count.index-1}"
+  }
+
+  service_account {
+    scopes = ["compute-rw", "storage-ro", "service-management", "service-control", "logging-write", "monitoring"]
+  }
+}
+
