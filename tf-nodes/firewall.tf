@@ -20,7 +20,7 @@ resource "google_compute_firewall" "kubernetes-the-hard-way-allow-internal" {
 resource "google_compute_firewall" "kubernetes-the-hard-way-allow-external" {
   name    = "kubernetes-the-hard-way-allow-external"
   network = "${google_compute_network.kubernetes-the-hard-way.name}"
-  source_ranges = ["1.0.0.0/0"]
+  source_ranges = ["0.0.0.0/0"]
 
   allow {
     protocol = "tcp"

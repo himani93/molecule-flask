@@ -1,22 +1,21 @@
 resource "google_compute_instance" "control-plane" {
   count = 3
-  name = "controller-${count.index - 1}"
+  name = "controller-${count.index}"
   machine_type = "n1-standard-1"
-  zone = "asia-southeast1"
+  zone = "asia-southeast1-a"
 
   tags = ["kubernetes-the-hard-way", "controller"]
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-1804-lts/ubuntu-os-cloud"
+      image = "ubuntu-1804-lts"
       size = 200
     }
   }
 
   network_interface {
-    network = "${google_compute_network.kubernetes-the-hard-way.self_link}"
     subnetwork = "${google_compute_subnetwork.kubernetes.name}"
-    address = "10.240.0.1${count.index - 1}"
+    address = "10.240.0.1${count.index}"
   }
 
   service_account {
@@ -26,23 +25,22 @@ resource "google_compute_instance" "control-plane" {
 
 resource "google_compute_instance" "workers" {
   count = 3
-  name = "worker-${count.index - 1}"
+  name = "worker-${count.index}"
   machine_type = "n1-standard-1"
-  zone = "asia-southeast1"
+  zone = "asia-southeast1-a"
 
   tags = ["kubernetes-the-hard-way", "controller"]
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-1804-lts/ubuntu-os-cloud"
+      image = "ubuntu-1804-lts"
       size = 200
     }
   }
 
   network_interface {
-    network = "${google_compute_network.kubernetes-the-hard-way.self_link}"
     subnetwork = "${google_compute_subnetwork.kubernetes.name}"
-    address = "10.240.0.2${count.index - 1}"
+    address = "10.240.0.2${count.index}"
   }
 
   service_account {
