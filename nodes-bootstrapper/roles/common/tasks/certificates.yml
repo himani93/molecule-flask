@@ -29,3 +29,9 @@
     dest: /home/ubuntu/certificates/{{ item }}-csr.json
     mode: 0644
   with_items: "{{ workers }}"
+
+- name: Write kube-controller-manager-csr.json
+  template:
+    src: kube-controller-manager-csr.json.j2
+    dest: /home/ubuntu/certificates/kube-controller-manager-csr.json
+    mode: 0644

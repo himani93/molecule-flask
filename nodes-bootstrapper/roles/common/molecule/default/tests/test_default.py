@@ -26,6 +26,8 @@ def test_executable_files(host, file):
   "/home/ubuntu/certificates/worker-0-csr.json",
   "/home/ubuntu/certificates/worker-1-csr.json",
   "/home/ubuntu/certificates/worker-2-csr.json",
+  "/home/ubuntu/certificates/kube-controller-manager-csr.json",
+
 ])
 def test_certificates(host, file):
     file = host.file(file)
