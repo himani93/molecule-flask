@@ -22,3 +22,10 @@
     src: admin-csr.json.j2
     dest: /home/ubuntu/certificates/admin-csr.json
     mode: 0644
+
+- name: Write instance-csr.json
+  template:
+    src: instance-csr.json.j2
+    dest: /home/ubuntu/certificates/{{ item }}-csr.json
+    mode: 0644
+  with_items: "{{ workers }}"
