@@ -21,6 +21,7 @@ def test_executable_files(host, file):
 
 @pytest.mark.parametrize('file', [
   "/home/ubuntu/certificates/ca-config.json",
+  "/home/ubuntu/certificates/ca-csr.json",
 ])
 def test_certificates(host, file):
     file = host.file(file)

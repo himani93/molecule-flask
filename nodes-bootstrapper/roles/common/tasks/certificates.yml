@@ -1,0 +1,18 @@
+---
+- name: Create directory for certificates
+  file:
+    path: /home/ubuntu/certificates
+    state: directory
+    mode: 0755
+
+- name: Write ca-config.json
+  template:
+    src: ca-config.json.j2
+    dest: /home/ubuntu/certificates/ca-config.json
+    mode: 0644
+
+- name: Write ca-csr.json
+  template:
+    src: ca-csr.json.j2
+    dest: /home/ubuntu/certificates/ca-csr.json
+    mode: 0644
