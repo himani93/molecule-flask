@@ -9,10 +9,21 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 @pytest.mark.parametrize('file', [
   "/usr/local/bin/cfssl",
-  "/usr/local/bin/cfssljson"
+  "/usr/local/bin/cfssljson",
+  "/usr/local/bin/kubectl",
 ])
-def test_files(host, file):
+def test_executable_files(host, file):
     file = host.file(file)
 
     assert file.exists
     assert file.mode == 0o755
+
+
+@pytest.mark.parametrize('file', [
+  "/home/ubuntu/certificates/ca-config.json",
+])
+def test_certificates(host, file):
+    file = host.file(file)
+
+    assert file.exists
+    assert file.mode == 0o644
