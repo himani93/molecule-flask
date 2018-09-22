@@ -1,0 +1,7 @@
+---
+- name: controllers | All roles
+  hosts: controllers
+  become: true
+
+  roles:
+    - { role: common, tags: ["common"] }

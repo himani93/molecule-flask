@@ -1,0 +1,24 @@
+---
+- name: Download cfssl
+  get_url:
+    url: https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+    dest: /usr/local/bin/cfssl
+    mode: +x
+
+- name: Download cfssljson
+  get_url:
+    url: https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+    dest: /usr/local/bin/cfssljson
+    mode: +x
+
+# name: Move cfssl to /usr/local/bin/
+# file:
+#   src: /home/ubuntu/cfssl_linux-amd64
+#   dest: /usr/local/bin/cfssl_linux-amd64
+#   remote_src: True
+
+# name: Move cfssljson to /usr/local/bin/
+# file:
+#   src: /home/ubuntu/cfssljson_linux-amd64
+#   dest: /usr/local/bin/cfssljson_linux-amd64
+#   remote_src: True

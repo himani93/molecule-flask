@@ -15,4 +15,5 @@ setup the Kubernetes cluster.
 
 Right now, what we have done is:
 1. Setup GCP
+2. Prepare compute resources with Terraform
 
