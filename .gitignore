@@ -1,2 +1,4 @@
 .terraform
 *.retry
+venv-molecule-flask/*
+.pyc
