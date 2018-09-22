@@ -16,3 +16,9 @@
     src: ca-csr.json.j2
     dest: /home/ubuntu/certificates/ca-csr.json
     mode: 0644
+
+- name: Write admin-csr.json
+  template:
+    src: admin-csr.json.j2
+    dest: /home/ubuntu/certificates/admin-csr.json
+    mode: 0644
