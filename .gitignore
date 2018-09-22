@@ -2,3 +2,4 @@
 *.retry
 venv-molecule-flask/*
 .pyc
+__pycache__
