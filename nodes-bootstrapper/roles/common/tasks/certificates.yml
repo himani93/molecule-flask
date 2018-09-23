@@ -53,3 +53,9 @@
     src: kubernetes-csr.json.j2
     dest: /home/ubuntu/certificates/kubernetes-csr.json
     mode: 0644
+
+- name: Write service-account-csr.json
+  template:
+    src: service-account-csr.json.j2
+    dest: /home/ubuntu/certificates/service-account-csr.json
+    mode: 0644

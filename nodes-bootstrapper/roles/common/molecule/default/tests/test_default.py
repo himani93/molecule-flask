@@ -30,6 +30,7 @@ def test_executable_files(host, file):
   "/home/ubuntu/certificates/kube-proxy-csr.json",
   "/home/ubuntu/certificates/kube-scheduler-csr.json",
   "/home/ubuntu/certificates/kubernetes-csr.json",
+  "/home/ubuntu/certificates/service-account-csr.json",
 ])
 def test_certificates(host, file):
     file = host.file(file)
