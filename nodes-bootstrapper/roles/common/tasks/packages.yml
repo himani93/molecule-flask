@@ -4,15 +4,18 @@
     url: https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
     dest: /usr/local/bin/cfssl
     mode: +x
+  when: controller_1 | default(False)
 
 - name: Download cfssljson
   get_url:
     url: https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
     dest: /usr/local/bin/cfssljson
     mode: +x
+  when: controller_1 | default(False)
 
 - name: Download kubectl
   get_url:
     url: https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
     mode: +x
+  when: controller_1 | default(False)
