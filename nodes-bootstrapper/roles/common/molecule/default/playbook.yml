@@ -1,5 +1,5 @@
 ---
 - name: Converge
-  hosts: all
+  hosts: primary-controller
   roles:
     - role: common

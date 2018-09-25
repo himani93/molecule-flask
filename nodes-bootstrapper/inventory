@@ -1,0 +1,12 @@
+[primary-controller]
+controller-1
+
+[controllers]
+controller-1
+controller-2
+controller-3
+
+[workers]
+worker-1
+worker-2
+worker-3

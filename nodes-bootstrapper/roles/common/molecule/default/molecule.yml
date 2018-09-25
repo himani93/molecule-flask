@@ -9,6 +9,8 @@ platforms:
   - name: controller-1
     image: centos:7
     privileged: true
+    groups:
+      - primary-controller
   - name: controller-2
     image: centos:7
     privileged: true
