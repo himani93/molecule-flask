@@ -1,0 +1,10 @@
+---
+- name: Create directory for certificates
+  file:
+    path: /home/ubuntu/certificates/pem
+    state: directory
+    mode: 0755
+
+- name: Generate ca-key.pem and ca.pem
+  shell: >
+    cfssl gencert -initca {{ ca_csr_json  }} | cfssljson -bare ca
