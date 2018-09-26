@@ -20,17 +20,17 @@ def test_executable_files(host, file):
 
 
 @pytest.mark.parametrize('file', [
-  "/home/ubuntu/certificates/ca-config.json",
-  "/home/ubuntu/certificates/ca-csr.json",
-  "/home/ubuntu/certificates/admin-csr.json",
-  "/home/ubuntu/certificates/worker-0-csr.json",
-  "/home/ubuntu/certificates/worker-1-csr.json",
-  "/home/ubuntu/certificates/worker-2-csr.json",
-  "/home/ubuntu/certificates/kube-controller-manager-csr.json",
-  "/home/ubuntu/certificates/kube-proxy-csr.json",
-  "/home/ubuntu/certificates/kube-scheduler-csr.json",
-  "/home/ubuntu/certificates/kubernetes-csr.json",
-  "/home/ubuntu/certificates/service-account-csr.json",
+  "/home/ubuntu/certificates/json/ca-config.json",
+  "/home/ubuntu/certificates/json/ca-csr.json",
+  "/home/ubuntu/certificates/json/admin-csr.json",
+  "/home/ubuntu/certificates/json/worker-0-csr.json",
+  "/home/ubuntu/certificates/json/worker-1-csr.json",
+  "/home/ubuntu/certificates/json/worker-2-csr.json",
+  "/home/ubuntu/certificates/json/kube-controller-manager-csr.json",
+  "/home/ubuntu/certificates/json/kube-proxy-csr.json",
+  "/home/ubuntu/certificates/json/kube-scheduler-csr.json",
+  "/home/ubuntu/certificates/json/kubernetes-csr.json",
+  "/home/ubuntu/certificates/json/service-account-csr.json",
 ])
 def test_certificates(host, file):
     file = host.file(file)
